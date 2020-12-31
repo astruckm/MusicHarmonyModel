@@ -24,13 +24,13 @@ class MusicHarmonyModelTests: XCTestCase {
     }
 
     func testNoteSpellings() {
-        let pcCSharp = PitchClass.c
+        let pcCSharp = PitchClass.cSharp
         let pcE = PitchClass.e
         let pcF = PitchClass.f
         let pcGSharp = PitchClass.gSharp
         let pcB = PitchClass.b
         
-        print(pcCSharp.possibleSpellings)
+        print("CSharp possible spellings: ", pcCSharp.possibleSpellings)
         XCTAssert(pcCSharp.possibleSpellings == ["C♯", "D♭", "B𝄪"])
         XCTAssert(pcE.possibleSpellings == ["E", "F♭", "D𝄪"])
         XCTAssert(pcF.possibleSpellings == ["F", "E♯", "G𝄫"])

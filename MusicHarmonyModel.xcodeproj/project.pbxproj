@@ -120,10 +120,10 @@
 		72F23B4B259DAA16000CB328 /* Note+Harmony Types */ = {
 			isa = PBXGroup;
 			children = (
-				72F23B4C259DAA16000CB328 /* ScaleTypes.swift */,
 				72F23B4D259DAA16000CB328 /* NoteTypes.swift */,
 				72F23B4E259DAA16000CB328 /* IntervalTypes.swift */,
 				72F23B4F259DAA16000CB328 /* ChordTypes.swift */,
+				72F23B4C259DAA16000CB328 /* ScaleTypes.swift */,
 				72F23B50259DAA16000CB328 /* TypeConversions.swift */,
 			);
 			path = "Note+Harmony Types";

@@ -36,7 +36,7 @@ public enum PitchClass: Int, Comparable, Hashable, CaseIterable {
     }
 
     var possibleSpellings: [String] {
-        return self.possibleLetterAccidentalCombos.map { $0.letter.rawValue + (($0.accidental == .natural) ? "" : $0.letter.rawValue) }
+        return self.possibleLetterAccidentalCombos.map { $0.letter.rawValue + (($0.accidental == .natural) ? "" : $0.accidental.rawValue) }
     }
     
     // TODO: delete this, redundant now
