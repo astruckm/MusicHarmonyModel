@@ -74,11 +74,20 @@ public enum Accidental: String {
     case sharp = "♯"
     case doubleSharp = "𝄪"
     case doubleFlat = "𝄫"
+    
+    var semitonesAltered: Int {
+        switch self {
+        case .flat: return -1
+        case .natural: return 0
+        case .sharp: return 1
+        case .doubleSharp: return 2
+        case .doubleFlat: return -2
+        }
+    }
 }
 
 public enum Octave: Int, Equatable, CaseIterable, Hashable {
-    case zero = 0
-    case one = 1
+    case zero = 0, one, two, three, four, five, six, seven, eight
 }
 
 public struct Note: CustomStringConvertible, Hashable {
@@ -100,6 +109,23 @@ public struct Note: CustomStringConvertible, Hashable {
         self.pitchClass = pitchClass
         self.noteLetter = noteLetter
         self.accidental = spelling.accidental
+        self.octave = octave
+    }
+    
+    //This init should guarantee you get a Note
+    init(noteLetter: NoteLetter, accidental: Accidental, octave: Octave?) {
+        let spelling = noteLetter.rawValue + accidental.rawValue
+        let pitchClass = PitchClass.allCases.first(where: { $0.possibleSpellings.contains(spelling) })
+        if let pitchClass = pitchClass {
+            self.pitchClass = pitchClass
+        } else {
+            let noteLetterDefaultPCNum: Int = (noteLetter.abstractTonalScaleDegree) > 3 ? ((noteLetter.abstractTonalScaleDegree - 1) * 2) - 1 : ((noteLetter.abstractTonalScaleDegree - 1) * 2)
+            let spellingPCValue = (noteLetterDefaultPCNum + accidental.semitonesAltered) % PitchClass.allCases.count
+            self.pitchClass = PitchClass(rawValue: spellingPCValue) ?? .c
+        }
+        
+        self.noteLetter = noteLetter
+        self.accidental = accidental
         self.octave = octave
     }
     
