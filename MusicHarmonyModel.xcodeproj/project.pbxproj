@@ -8,22 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		72F23B02259DA852000CB328 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F23B01259DA852000CB328 /* AppDelegate.swift */; };
-		72F23B04259DA852000CB328 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F23B03259DA852000CB328 /* ViewController.swift */; };
 		72F23B06259DA853000CB328 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72F23B05259DA853000CB328 /* Assets.xcassets */; };
-		72F23B09259DA853000CB328 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72F23B07259DA853000CB328 /* Main.storyboard */; };
 		72F23B15259DA853000CB328 /* MusicHarmonyModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F23B14259DA853000CB328 /* MusicHarmonyModelTests.swift */; };
-		72F23B20259DA853000CB328 /* MusicHarmonyModelUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F23B1F259DA853000CB328 /* MusicHarmonyModelUITests.swift */; };
+		72F23B46259DA9D7000CB328 /* NoteTransforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F23B43259DA9D7000CB328 /* NoteTransforms.swift */; };
+		72F23B47259DA9D7000CB328 /* EnharmonicSpelling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F23B44259DA9D7000CB328 /* EnharmonicSpelling.swift */; };
+		72F23B48259DA9D7000CB328 /* HarmonyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F23B45259DA9D7000CB328 /* HarmonyModel.swift */; };
+		72F23B51259DAA16000CB328 /* ScaleTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F23B4C259DAA16000CB328 /* ScaleTypes.swift */; };
+		72F23B52259DAA16000CB328 /* NoteTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F23B4D259DAA16000CB328 /* NoteTypes.swift */; };
+		72F23B53259DAA16000CB328 /* IntervalTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F23B4E259DAA16000CB328 /* IntervalTypes.swift */; };
+		72F23B54259DAA16000CB328 /* ChordTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F23B4F259DAA16000CB328 /* ChordTypes.swift */; };
+		72F23B55259DAA16000CB328 /* TypeConversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F23B50259DAA16000CB328 /* TypeConversions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		72F23B11259DA853000CB328 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 72F23AF6259DA852000CB328 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 72F23AFD259DA852000CB328;
-			remoteInfo = MusicHarmonyModel;
-		};
-		72F23B1C259DA853000CB328 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 72F23AF6259DA852000CB328 /* Project object */;
 			proxyType = 1;
@@ -35,17 +33,20 @@
 /* Begin PBXFileReference section */
 		72F23AFE259DA852000CB328 /* MusicHarmonyModel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicHarmonyModel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72F23B01259DA852000CB328 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		72F23B03259DA852000CB328 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		72F23B05259DA853000CB328 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		72F23B08259DA853000CB328 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		72F23B0A259DA853000CB328 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		72F23B0B259DA853000CB328 /* MusicHarmonyModel.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MusicHarmonyModel.entitlements; sourceTree = "<group>"; };
 		72F23B10259DA853000CB328 /* MusicHarmonyModelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicHarmonyModelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		72F23B14259DA853000CB328 /* MusicHarmonyModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicHarmonyModelTests.swift; sourceTree = "<group>"; };
 		72F23B16259DA853000CB328 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		72F23B1B259DA853000CB328 /* MusicHarmonyModelUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicHarmonyModelUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		72F23B1F259DA853000CB328 /* MusicHarmonyModelUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicHarmonyModelUITests.swift; sourceTree = "<group>"; };
-		72F23B21259DA853000CB328 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		72F23B43259DA9D7000CB328 /* NoteTransforms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteTransforms.swift; sourceTree = "<group>"; };
+		72F23B44259DA9D7000CB328 /* EnharmonicSpelling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnharmonicSpelling.swift; sourceTree = "<group>"; };
+		72F23B45259DA9D7000CB328 /* HarmonyModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HarmonyModel.swift; sourceTree = "<group>"; };
+		72F23B4C259DAA16000CB328 /* ScaleTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScaleTypes.swift; sourceTree = "<group>"; };
+		72F23B4D259DAA16000CB328 /* NoteTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteTypes.swift; sourceTree = "<group>"; };
+		72F23B4E259DAA16000CB328 /* IntervalTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntervalTypes.swift; sourceTree = "<group>"; };
+		72F23B4F259DAA16000CB328 /* ChordTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChordTypes.swift; sourceTree = "<group>"; };
+		72F23B50259DAA16000CB328 /* TypeConversions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeConversions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,13 +64,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		72F23B18259DA853000CB328 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -78,7 +72,6 @@
 			children = (
 				72F23B00259DA852000CB328 /* MusicHarmonyModel */,
 				72F23B13259DA853000CB328 /* MusicHarmonyModelTests */,
-				72F23B1E259DA853000CB328 /* MusicHarmonyModelUITests */,
 				72F23AFF259DA852000CB328 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -88,7 +81,6 @@
 			children = (
 				72F23AFE259DA852000CB328 /* MusicHarmonyModel.app */,
 				72F23B10259DA853000CB328 /* MusicHarmonyModelTests.xctest */,
-				72F23B1B259DA853000CB328 /* MusicHarmonyModelUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -96,12 +88,11 @@
 		72F23B00259DA852000CB328 /* MusicHarmonyModel */ = {
 			isa = PBXGroup;
 			children = (
-				72F23B01259DA852000CB328 /* AppDelegate.swift */,
-				72F23B03259DA852000CB328 /* ViewController.swift */,
-				72F23B05259DA853000CB328 /* Assets.xcassets */,
-				72F23B07259DA853000CB328 /* Main.storyboard */,
-				72F23B0A259DA853000CB328 /* Info.plist */,
-				72F23B0B259DA853000CB328 /* MusicHarmonyModel.entitlements */,
+				72F23B44259DA9D7000CB328 /* EnharmonicSpelling.swift */,
+				72F23B45259DA9D7000CB328 /* HarmonyModel.swift */,
+				72F23B43259DA9D7000CB328 /* NoteTransforms.swift */,
+				72F23B4B259DAA16000CB328 /* Note+Harmony Types */,
+				72F23B39259DA8D6000CB328 /* Required Files */,
 			);
 			path = MusicHarmonyModel;
 			sourceTree = "<group>";
@@ -115,13 +106,27 @@
 			path = MusicHarmonyModelTests;
 			sourceTree = "<group>";
 		};
-		72F23B1E259DA853000CB328 /* MusicHarmonyModelUITests */ = {
+		72F23B39259DA8D6000CB328 /* Required Files */ = {
 			isa = PBXGroup;
 			children = (
-				72F23B1F259DA853000CB328 /* MusicHarmonyModelUITests.swift */,
-				72F23B21259DA853000CB328 /* Info.plist */,
+				72F23B01259DA852000CB328 /* AppDelegate.swift */,
+				72F23B05259DA853000CB328 /* Assets.xcassets */,
+				72F23B0A259DA853000CB328 /* Info.plist */,
+				72F23B0B259DA853000CB328 /* MusicHarmonyModel.entitlements */,
 			);
-			path = MusicHarmonyModelUITests;
+			path = "Required Files";
+			sourceTree = "<group>";
+		};
+		72F23B4B259DAA16000CB328 /* Note+Harmony Types */ = {
+			isa = PBXGroup;
+			children = (
+				72F23B4C259DAA16000CB328 /* ScaleTypes.swift */,
+				72F23B4D259DAA16000CB328 /* NoteTypes.swift */,
+				72F23B4E259DAA16000CB328 /* IntervalTypes.swift */,
+				72F23B4F259DAA16000CB328 /* ChordTypes.swift */,
+				72F23B50259DAA16000CB328 /* TypeConversions.swift */,
+			);
+			path = "Note+Harmony Types";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,24 +167,6 @@
 			productReference = 72F23B10259DA853000CB328 /* MusicHarmonyModelTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		72F23B1A259DA853000CB328 /* MusicHarmonyModelUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 72F23B2A259DA853000CB328 /* Build configuration list for PBXNativeTarget "MusicHarmonyModelUITests" */;
-			buildPhases = (
-				72F23B17259DA853000CB328 /* Sources */,
-				72F23B18259DA853000CB328 /* Frameworks */,
-				72F23B19259DA853000CB328 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				72F23B1D259DA853000CB328 /* PBXTargetDependency */,
-			);
-			name = MusicHarmonyModelUITests;
-			productName = MusicHarmonyModelUITests;
-			productReference = 72F23B1B259DA853000CB328 /* MusicHarmonyModelUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -193,10 +180,6 @@
 						CreatedOnToolsVersion = 12.3;
 					};
 					72F23B0F259DA853000CB328 = {
-						CreatedOnToolsVersion = 12.3;
-						TestTargetID = 72F23AFD259DA852000CB328;
-					};
-					72F23B1A259DA853000CB328 = {
 						CreatedOnToolsVersion = 12.3;
 						TestTargetID = 72F23AFD259DA852000CB328;
 					};
@@ -217,7 +200,6 @@
 			targets = (
 				72F23AFD259DA852000CB328 /* MusicHarmonyModel */,
 				72F23B0F259DA853000CB328 /* MusicHarmonyModelTests */,
-				72F23B1A259DA853000CB328 /* MusicHarmonyModelUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -228,18 +210,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				72F23B06259DA853000CB328 /* Assets.xcassets in Resources */,
-				72F23B09259DA853000CB328 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		72F23B0E259DA853000CB328 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		72F23B19259DA853000CB328 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -253,8 +227,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72F23B04259DA852000CB328 /* ViewController.swift in Sources */,
+				72F23B54259DAA16000CB328 /* ChordTypes.swift in Sources */,
+				72F23B51259DAA16000CB328 /* ScaleTypes.swift in Sources */,
+				72F23B48259DA9D7000CB328 /* HarmonyModel.swift in Sources */,
+				72F23B53259DAA16000CB328 /* IntervalTypes.swift in Sources */,
+				72F23B46259DA9D7000CB328 /* NoteTransforms.swift in Sources */,
+				72F23B55259DAA16000CB328 /* TypeConversions.swift in Sources */,
+				72F23B47259DA9D7000CB328 /* EnharmonicSpelling.swift in Sources */,
 				72F23B02259DA852000CB328 /* AppDelegate.swift in Sources */,
+				72F23B52259DAA16000CB328 /* NoteTypes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,14 +247,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		72F23B17259DA853000CB328 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				72F23B20259DA853000CB328 /* MusicHarmonyModelUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -282,23 +255,7 @@
 			target = 72F23AFD259DA852000CB328 /* MusicHarmonyModel */;
 			targetProxy = 72F23B11259DA853000CB328 /* PBXContainerItemProxy */;
 		};
-		72F23B1D259DA853000CB328 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 72F23AFD259DA852000CB328 /* MusicHarmonyModel */;
-			targetProxy = 72F23B1C259DA853000CB328 /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		72F23B07259DA853000CB328 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				72F23B08259DA853000CB328 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		72F23B22259DA853000CB328 /* Debug */ = {
@@ -421,12 +378,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = MusicHarmonyModel/MusicHarmonyModel.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "MusicHarmonyModel/Required Files/MusicHarmonyModel.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 48535654Y7;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = MusicHarmonyModel/Info.plist;
+				INFOPLIST_FILE = "MusicHarmonyModel/Required Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -442,12 +399,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = MusicHarmonyModel/MusicHarmonyModel.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "MusicHarmonyModel/Required Files/MusicHarmonyModel.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 48535654Y7;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = MusicHarmonyModel/Info.plist;
+				INFOPLIST_FILE = "MusicHarmonyModel/Required Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -502,46 +459,6 @@
 			};
 			name = Release;
 		};
-		72F23B2B259DA853000CB328 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 48535654Y7;
-				INFOPLIST_FILE = MusicHarmonyModelUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ASM.MusicHarmonyModelUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = MusicHarmonyModel;
-			};
-			name = Debug;
-		};
-		72F23B2C259DA853000CB328 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 48535654Y7;
-				INFOPLIST_FILE = MusicHarmonyModelUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ASM.MusicHarmonyModelUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = MusicHarmonyModel;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -568,15 +485,6 @@
 			buildConfigurations = (
 				72F23B28259DA853000CB328 /* Debug */,
 				72F23B29259DA853000CB328 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		72F23B2A259DA853000CB328 /* Build configuration list for PBXNativeTarget "MusicHarmonyModelUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				72F23B2B259DA853000CB328 /* Debug */,
-				72F23B2C259DA853000CB328 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
