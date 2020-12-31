@@ -1,0 +1,587 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		72F23B02259DA852000CB328 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F23B01259DA852000CB328 /* AppDelegate.swift */; };
+		72F23B04259DA852000CB328 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F23B03259DA852000CB328 /* ViewController.swift */; };
+		72F23B06259DA853000CB328 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72F23B05259DA853000CB328 /* Assets.xcassets */; };
+		72F23B09259DA853000CB328 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72F23B07259DA853000CB328 /* Main.storyboard */; };
+		72F23B15259DA853000CB328 /* MusicHarmonyModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F23B14259DA853000CB328 /* MusicHarmonyModelTests.swift */; };
+		72F23B20259DA853000CB328 /* MusicHarmonyModelUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F23B1F259DA853000CB328 /* MusicHarmonyModelUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		72F23B11259DA853000CB328 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 72F23AF6259DA852000CB328 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 72F23AFD259DA852000CB328;
+			remoteInfo = MusicHarmonyModel;
+		};
+		72F23B1C259DA853000CB328 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 72F23AF6259DA852000CB328 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 72F23AFD259DA852000CB328;
+			remoteInfo = MusicHarmonyModel;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		72F23AFE259DA852000CB328 /* MusicHarmonyModel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicHarmonyModel.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		72F23B01259DA852000CB328 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		72F23B03259DA852000CB328 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		72F23B05259DA853000CB328 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		72F23B08259DA853000CB328 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		72F23B0A259DA853000CB328 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		72F23B0B259DA853000CB328 /* MusicHarmonyModel.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MusicHarmonyModel.entitlements; sourceTree = "<group>"; };
+		72F23B10259DA853000CB328 /* MusicHarmonyModelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicHarmonyModelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		72F23B14259DA853000CB328 /* MusicHarmonyModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicHarmonyModelTests.swift; sourceTree = "<group>"; };
+		72F23B16259DA853000CB328 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		72F23B1B259DA853000CB328 /* MusicHarmonyModelUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicHarmonyModelUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		72F23B1F259DA853000CB328 /* MusicHarmonyModelUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicHarmonyModelUITests.swift; sourceTree = "<group>"; };
+		72F23B21259DA853000CB328 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		72F23AFB259DA852000CB328 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		72F23B0D259DA853000CB328 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		72F23B18259DA853000CB328 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		72F23AF5259DA852000CB328 = {
+			isa = PBXGroup;
+			children = (
+				72F23B00259DA852000CB328 /* MusicHarmonyModel */,
+				72F23B13259DA853000CB328 /* MusicHarmonyModelTests */,
+				72F23B1E259DA853000CB328 /* MusicHarmonyModelUITests */,
+				72F23AFF259DA852000CB328 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		72F23AFF259DA852000CB328 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				72F23AFE259DA852000CB328 /* MusicHarmonyModel.app */,
+				72F23B10259DA853000CB328 /* MusicHarmonyModelTests.xctest */,
+				72F23B1B259DA853000CB328 /* MusicHarmonyModelUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		72F23B00259DA852000CB328 /* MusicHarmonyModel */ = {
+			isa = PBXGroup;
+			children = (
+				72F23B01259DA852000CB328 /* AppDelegate.swift */,
+				72F23B03259DA852000CB328 /* ViewController.swift */,
+				72F23B05259DA853000CB328 /* Assets.xcassets */,
+				72F23B07259DA853000CB328 /* Main.storyboard */,
+				72F23B0A259DA853000CB328 /* Info.plist */,
+				72F23B0B259DA853000CB328 /* MusicHarmonyModel.entitlements */,
+			);
+			path = MusicHarmonyModel;
+			sourceTree = "<group>";
+		};
+		72F23B13259DA853000CB328 /* MusicHarmonyModelTests */ = {
+			isa = PBXGroup;
+			children = (
+				72F23B14259DA853000CB328 /* MusicHarmonyModelTests.swift */,
+				72F23B16259DA853000CB328 /* Info.plist */,
+			);
+			path = MusicHarmonyModelTests;
+			sourceTree = "<group>";
+		};
+		72F23B1E259DA853000CB328 /* MusicHarmonyModelUITests */ = {
+			isa = PBXGroup;
+			children = (
+				72F23B1F259DA853000CB328 /* MusicHarmonyModelUITests.swift */,
+				72F23B21259DA853000CB328 /* Info.plist */,
+			);
+			path = MusicHarmonyModelUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		72F23AFD259DA852000CB328 /* MusicHarmonyModel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 72F23B24259DA853000CB328 /* Build configuration list for PBXNativeTarget "MusicHarmonyModel" */;
+			buildPhases = (
+				72F23AFA259DA852000CB328 /* Sources */,
+				72F23AFB259DA852000CB328 /* Frameworks */,
+				72F23AFC259DA852000CB328 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MusicHarmonyModel;
+			productName = MusicHarmonyModel;
+			productReference = 72F23AFE259DA852000CB328 /* MusicHarmonyModel.app */;
+			productType = "com.apple.product-type.application";
+		};
+		72F23B0F259DA853000CB328 /* MusicHarmonyModelTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 72F23B27259DA853000CB328 /* Build configuration list for PBXNativeTarget "MusicHarmonyModelTests" */;
+			buildPhases = (
+				72F23B0C259DA853000CB328 /* Sources */,
+				72F23B0D259DA853000CB328 /* Frameworks */,
+				72F23B0E259DA853000CB328 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				72F23B12259DA853000CB328 /* PBXTargetDependency */,
+			);
+			name = MusicHarmonyModelTests;
+			productName = MusicHarmonyModelTests;
+			productReference = 72F23B10259DA853000CB328 /* MusicHarmonyModelTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		72F23B1A259DA853000CB328 /* MusicHarmonyModelUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 72F23B2A259DA853000CB328 /* Build configuration list for PBXNativeTarget "MusicHarmonyModelUITests" */;
+			buildPhases = (
+				72F23B17259DA853000CB328 /* Sources */,
+				72F23B18259DA853000CB328 /* Frameworks */,
+				72F23B19259DA853000CB328 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				72F23B1D259DA853000CB328 /* PBXTargetDependency */,
+			);
+			name = MusicHarmonyModelUITests;
+			productName = MusicHarmonyModelUITests;
+			productReference = 72F23B1B259DA853000CB328 /* MusicHarmonyModelUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		72F23AF6259DA852000CB328 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1230;
+				LastUpgradeCheck = 1230;
+				TargetAttributes = {
+					72F23AFD259DA852000CB328 = {
+						CreatedOnToolsVersion = 12.3;
+					};
+					72F23B0F259DA853000CB328 = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = 72F23AFD259DA852000CB328;
+					};
+					72F23B1A259DA853000CB328 = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = 72F23AFD259DA852000CB328;
+					};
+				};
+			};
+			buildConfigurationList = 72F23AF9259DA852000CB328 /* Build configuration list for PBXProject "MusicHarmonyModel" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 72F23AF5259DA852000CB328;
+			productRefGroup = 72F23AFF259DA852000CB328 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				72F23AFD259DA852000CB328 /* MusicHarmonyModel */,
+				72F23B0F259DA853000CB328 /* MusicHarmonyModelTests */,
+				72F23B1A259DA853000CB328 /* MusicHarmonyModelUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		72F23AFC259DA852000CB328 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				72F23B06259DA853000CB328 /* Assets.xcassets in Resources */,
+				72F23B09259DA853000CB328 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		72F23B0E259DA853000CB328 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		72F23B19259DA853000CB328 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		72F23AFA259DA852000CB328 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				72F23B04259DA852000CB328 /* ViewController.swift in Sources */,
+				72F23B02259DA852000CB328 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		72F23B0C259DA853000CB328 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				72F23B15259DA853000CB328 /* MusicHarmonyModelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		72F23B17259DA853000CB328 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				72F23B20259DA853000CB328 /* MusicHarmonyModelUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		72F23B12259DA853000CB328 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 72F23AFD259DA852000CB328 /* MusicHarmonyModel */;
+			targetProxy = 72F23B11259DA853000CB328 /* PBXContainerItemProxy */;
+		};
+		72F23B1D259DA853000CB328 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 72F23AFD259DA852000CB328 /* MusicHarmonyModel */;
+			targetProxy = 72F23B1C259DA853000CB328 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		72F23B07259DA853000CB328 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				72F23B08259DA853000CB328 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		72F23B22259DA853000CB328 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		72F23B23259DA853000CB328 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		72F23B25259DA853000CB328 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MusicHarmonyModel/MusicHarmonyModel.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 48535654Y7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = MusicHarmonyModel/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ASM.MusicHarmonyModel;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		72F23B26259DA853000CB328 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MusicHarmonyModel/MusicHarmonyModel.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 48535654Y7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = MusicHarmonyModel/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ASM.MusicHarmonyModel;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		72F23B28259DA853000CB328 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 48535654Y7;
+				INFOPLIST_FILE = MusicHarmonyModelTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ASM.MusicHarmonyModelTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MusicHarmonyModel.app/Contents/MacOS/MusicHarmonyModel";
+			};
+			name = Debug;
+		};
+		72F23B29259DA853000CB328 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 48535654Y7;
+				INFOPLIST_FILE = MusicHarmonyModelTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ASM.MusicHarmonyModelTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MusicHarmonyModel.app/Contents/MacOS/MusicHarmonyModel";
+			};
+			name = Release;
+		};
+		72F23B2B259DA853000CB328 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 48535654Y7;
+				INFOPLIST_FILE = MusicHarmonyModelUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ASM.MusicHarmonyModelUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = MusicHarmonyModel;
+			};
+			name = Debug;
+		};
+		72F23B2C259DA853000CB328 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 48535654Y7;
+				INFOPLIST_FILE = MusicHarmonyModelUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ASM.MusicHarmonyModelUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = MusicHarmonyModel;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		72F23AF9259DA852000CB328 /* Build configuration list for PBXProject "MusicHarmonyModel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				72F23B22259DA853000CB328 /* Debug */,
+				72F23B23259DA853000CB328 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		72F23B24259DA853000CB328 /* Build configuration list for PBXNativeTarget "MusicHarmonyModel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				72F23B25259DA853000CB328 /* Debug */,
+				72F23B26259DA853000CB328 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		72F23B27259DA853000CB328 /* Build configuration list for PBXNativeTarget "MusicHarmonyModelTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				72F23B28259DA853000CB328 /* Debug */,
+				72F23B29259DA853000CB328 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		72F23B2A259DA853000CB328 /* Build configuration list for PBXNativeTarget "MusicHarmonyModelUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				72F23B2B259DA853000CB328 /* Debug */,
+				72F23B2C259DA853000CB328 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 72F23AF6259DA852000CB328 /* Project object */;
+}
