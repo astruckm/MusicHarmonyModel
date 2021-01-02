@@ -86,6 +86,7 @@ public enum Accidental: String {
     }
 }
 
+//C4 is middle C, A4 is A 440, A0 lowest note on 88 key piano, etc.
 public enum Octave: Int, Equatable, CaseIterable, Hashable {
     case zero = 0, one, two, three, four, five, six, seven, eight
 }

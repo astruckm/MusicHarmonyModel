@@ -21,9 +21,9 @@ func allInversions(of collection: [PitchClass]) -> [[(PitchClass)]] {
 }
 
 //Abstract Int value for a key, starting from 0 for lowest C possible/known
-//TODO: add func for MIDI note number
+//Gives MIDI note number
 func keyValue(pitch: PianoKey) -> Int {
-    return pitch.pitchClass.rawValue + (pitch.octave.rawValue * PitchClass.allCases.count)
+    return pitch.pitchClass.rawValue + ((pitch.octave.rawValue * PitchClass.allCases.count) + 1)
 }
 
 //Make any Int the corresponding PitchClass
