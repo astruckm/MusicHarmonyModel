@@ -9,6 +9,7 @@
 import Foundation
 
 /*
+ //This should take a parameter for interval above or below
 func note(fromNote note1: Note, andIntervalAbove interval: Interval) -> Note {
     let note1KeyValue = keyValue(pitch: (note1.pitchClass, note1.octave ?? .zero))
     let note2KeyValue = note1KeyValue + interval.pitchIntervalClass.rawValue
@@ -36,6 +37,7 @@ func pitchIntervalClass(between note1: Note, and note2: Note) -> PitchIntervalCl
 }
 
 //assumes the notes are already spelled correctly
+//FIXME: StepsAway method only working with notes within a tritone. Needs to know which note is higher, need octave for this, if no octave have to assume they are same octave--return value for that but print error message
 func intervalDiatonicSize(between note1: Note, and note2: Note) -> IntervalDiatonicSize {
     let absStepsAway = abs(note1.noteLetter.abstractTonalScaleDegree - note2.noteLetter.abstractTonalScaleDegree)
     let stepsAway = (absStepsAway + NoteLetter.allCases.count) % NoteLetter.allCases.count
@@ -44,7 +46,9 @@ func intervalDiatonicSize(between note1: Note, and note2: Note) -> IntervalDiato
         return note1.octave == note2.octave ? IntervalDiatonicSize.unison : IntervalDiatonicSize.octave
     }
     for size in IntervalDiatonicSize.allCases {
-        if size.numSteps == stepsAway { return size }
+        if size.numSteps == stepsAway {
+            return size
+        }
     }
     print("Error deriving interval's within-octave diatonic size")
     return IntervalDiatonicSize.unison

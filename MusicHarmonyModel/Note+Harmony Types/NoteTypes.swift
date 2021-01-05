@@ -38,14 +38,7 @@ public enum PitchClass: Int, Comparable, Hashable, CaseIterable {
     var possibleSpellings: [String] {
         return self.possibleLetterAccidentalCombos.map { $0.letter.rawValue + (($0.accidental == .natural) ? "" : $0.accidental.rawValue) }
     }
-    
-    // TODO: delete this, redundant now
-    var possibleLetterNames: [NoteLetter] {
-        let possibleSpellingsLetters = possibleSpellings.map { String($0.first!) }
-        return NoteLetter.allCases.filter { possibleSpellingsLetters.contains($0.rawValue) }
-    }
-    
-    
+        
     public static func <(lhs: PitchClass, rhs: PitchClass) -> Bool {
         return lhs.rawValue < rhs.rawValue
     }
@@ -69,19 +62,19 @@ public enum NoteLetter: String, Equatable, CaseIterable, Hashable {
 }
 
 public enum Accidental: String {
+    case doubleFlat = "𝄫"
     case flat = "♭"
     case natural = "♮"
     case sharp = "♯"
     case doubleSharp = "𝄪"
-    case doubleFlat = "𝄫"
     
     var semitonesAltered: Int {
         switch self {
+        case .doubleFlat: return -2
         case .flat: return -1
         case .natural: return 0
         case .sharp: return 1
         case .doubleSharp: return 2
-        case .doubleFlat: return -2
         }
     }
 }
@@ -91,16 +84,13 @@ public enum Octave: Int, Equatable, CaseIterable, Hashable {
     case zero = 0, one, two, three, four, five, six, seven, eight
 }
 
-public struct Note: CustomStringConvertible, Hashable {
+public struct Note: Hashable {
     let pitchClass: PitchClass
     let noteLetter: NoteLetter
     let accidental: Accidental
     let octave: Octave?
-    
-    public var description: String {
-        return noteLetter.rawValue + accidental.rawValue
-    }
-        
+            
+    //Eventually delete or replace this
     init?(pitchClass: PitchClass, noteLetter: NoteLetter, octave: Octave?) {
         guard let spelling = pitchClass.possibleLetterAccidentalCombos.first(where: { $0.letter == noteLetter}) else {
             print("Note is not possible: pitch class and note letter do not match")
@@ -113,7 +103,7 @@ public struct Note: CustomStringConvertible, Hashable {
         self.octave = octave
     }
     
-    //This init should guarantee you get a Note
+    //This init will guarantee you get a Note
     init(noteLetter: NoteLetter, accidental: Accidental, octave: Octave?) {
         let spelling = noteLetter.rawValue + accidental.rawValue
         let pitchClass = PitchClass.allCases.first(where: { $0.possibleSpellings.contains(spelling) })
@@ -131,6 +121,12 @@ public struct Note: CustomStringConvertible, Hashable {
     }
     
 
+}
+
+extension Note: CustomStringConvertible {
+    public var description: String {
+        return noteLetter.rawValue + accidental.rawValue
+    }
 }
 
 extension Note: Comparable {

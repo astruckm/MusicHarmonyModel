@@ -16,7 +16,6 @@ class NoteTests: XCTestCase {
         let pcGSharp = PitchClass.gSharp
         let pcB = PitchClass.b
         
-        print("CSharp possible spellings: ", pcCSharp.possibleSpellings)
         XCTAssert(pcCSharp.possibleSpellings == ["C♯", "D♭", "B𝄪"])
         XCTAssert(pcE.possibleSpellings == ["E", "F♭", "D𝄪"])
         XCTAssert(pcF.possibleSpellings == ["F", "E♯", "G𝄫"])

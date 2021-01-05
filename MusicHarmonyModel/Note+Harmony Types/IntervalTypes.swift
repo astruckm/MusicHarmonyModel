@@ -16,18 +16,18 @@ public enum PitchIntervalClass: Int, Hashable, Equatable {
     
     var possibleIntervalComponents: [IntervalComponents] {
         switch self {
-        case .zero: return [(.perfect, .unison)]
+        case .zero: return [(.diminished, .second), (.perfect, .unison), (.augmented, .seventh)]
         case .one: return [(.minor, .second), (.augmented, .unison)]
-        case .two: return [(.major, .second), (.diminished, .third)]
+        case .two: return [(.diminished, .third), (.major, .second)]
         case .three: return [(.minor, .third), (.augmented, .second)]
-        case .four: return [(.major, .third), (.diminished, .fourth)]
+        case .four: return [(.diminished, .fourth), (.major, .third)]
         case .five: return [(.perfect, .fourth), (.augmented, .third)]
         case .six: return [(.diminished, .fifth), (.augmented, .fourth)]
-        case .seven: return [(.perfect, .fifth), (.diminished, .sixth)]
+        case .seven: return [(.diminished, .sixth), (.perfect, .fifth)]
         case .eight: return [(.minor, .sixth), (.augmented, .fifth)]
-        case .nine: return [(.major, .sixth), (.diminished, .seventh)]
+        case .nine: return [(.diminished, .seventh), (.major, .sixth)]
         case .ten: return [(.minor, .seventh), (.augmented, .sixth)]
-        case .eleven: return [(.major, .seventh), (.diminished, .unison)]
+        case .eleven: return [(.diminished, .unison), (.major, .seventh)]
         }
     }
 }
@@ -121,7 +121,7 @@ public struct Interval: Equatable {
                 return
             }
         }
-        print("Interval is not possible: interval quality does not apply to that interval size")
+        print("Interval is not possible: interval quality: \(quality.rawValue) does not apply to that interval size: \(size.rawValue)")
         return nil
     }
     
@@ -134,7 +134,7 @@ public struct Interval: Equatable {
                 return
             }
         }
-        print("Interval is not possible: pitch interval class and interval size combination not possible")
+        print("Interval is not possible: pitch interval class: \(intervalClass.rawValue) and interval size: \(size.rawValue) combination not possible")
         return nil
     }
     

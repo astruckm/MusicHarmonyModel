@@ -11,16 +11,16 @@ import XCTest
 class EnharmonicSpellingTests: XCTestCase {
     
     struct EnharmonicSpellingObject: BestEnharmonicSpellingDelegate { }
-    var bestEnharmonicSpelling: BestEnharmonicSpelling!
+//    var bestEnharmonicSpelling: BestEnharmonicSpelling!
     var bestEnharmonicSpellingDelegate: BestEnharmonicSpellingDelegate!
     
     override func setUpWithError() throws {
-        bestEnharmonicSpelling = BestEnharmonicSpelling()
+//        bestEnharmonicSpelling = BestEnharmonicSpelling()
         bestEnharmonicSpellingDelegate = EnharmonicSpellingObject()
     }
     
     override func tearDownWithError() throws {
-        bestEnharmonicSpelling = nil
+//        bestEnharmonicSpelling = nil
         bestEnharmonicSpellingDelegate = nil
     }
     

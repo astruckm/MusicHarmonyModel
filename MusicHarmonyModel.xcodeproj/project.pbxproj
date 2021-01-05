@@ -10,14 +10,14 @@
 		72F23B02259DA852000CB328 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F23B01259DA852000CB328 /* AppDelegate.swift */; };
 		72F23B06259DA853000CB328 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72F23B05259DA853000CB328 /* Assets.xcassets */; };
 		72F23B15259DA853000CB328 /* HarmonyModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F23B14259DA853000CB328 /* HarmonyModelTests.swift */; };
-		72F23B46259DA9D7000CB328 /* ConversionFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F23B43259DA9D7000CB328 /* ConversionFunctions.swift */; };
+		72F23B46259DA9D7000CB328 /* NoteTransforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F23B43259DA9D7000CB328 /* NoteTransforms.swift */; };
 		72F23B47259DA9D7000CB328 /* EnharmonicSpelling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F23B44259DA9D7000CB328 /* EnharmonicSpelling.swift */; };
 		72F23B48259DA9D7000CB328 /* HarmonyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F23B45259DA9D7000CB328 /* HarmonyModel.swift */; };
 		72F23B51259DAA16000CB328 /* ScaleTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F23B4C259DAA16000CB328 /* ScaleTypes.swift */; };
 		72F23B52259DAA16000CB328 /* NoteTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F23B4D259DAA16000CB328 /* NoteTypes.swift */; };
 		72F23B53259DAA16000CB328 /* IntervalTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F23B4E259DAA16000CB328 /* IntervalTypes.swift */; };
 		72F23B54259DAA16000CB328 /* ChordTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F23B4F259DAA16000CB328 /* ChordTypes.swift */; };
-		72F23B55259DAA16000CB328 /* TypeConversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F23B50259DAA16000CB328 /* TypeConversions.swift */; };
+		72F23B55259DAA16000CB328 /* Conversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F23B50259DAA16000CB328 /* Conversions.swift */; };
 		72F23B7025A08F3E000CB328 /* IntervalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F23B6F25A08F3E000CB328 /* IntervalTests.swift */; };
 		72F23B7425A09237000CB328 /* NoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F23B7325A09237000CB328 /* NoteTests.swift */; };
 		72F23B7A25A0938F000CB328 /* EnharmonicSpellingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F23B7925A0938F000CB328 /* EnharmonicSpellingTests.swift */; };
@@ -44,14 +44,14 @@
 		72F23B10259DA853000CB328 /* MusicHarmonyModelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicHarmonyModelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		72F23B14259DA853000CB328 /* HarmonyModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarmonyModelTests.swift; sourceTree = "<group>"; };
 		72F23B16259DA853000CB328 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		72F23B43259DA9D7000CB328 /* ConversionFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversionFunctions.swift; sourceTree = "<group>"; };
+		72F23B43259DA9D7000CB328 /* NoteTransforms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteTransforms.swift; sourceTree = "<group>"; };
 		72F23B44259DA9D7000CB328 /* EnharmonicSpelling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnharmonicSpelling.swift; sourceTree = "<group>"; };
 		72F23B45259DA9D7000CB328 /* HarmonyModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HarmonyModel.swift; sourceTree = "<group>"; };
 		72F23B4C259DAA16000CB328 /* ScaleTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScaleTypes.swift; sourceTree = "<group>"; };
 		72F23B4D259DAA16000CB328 /* NoteTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteTypes.swift; sourceTree = "<group>"; };
 		72F23B4E259DAA16000CB328 /* IntervalTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntervalTypes.swift; sourceTree = "<group>"; };
 		72F23B4F259DAA16000CB328 /* ChordTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChordTypes.swift; sourceTree = "<group>"; };
-		72F23B50259DAA16000CB328 /* TypeConversions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeConversions.swift; sourceTree = "<group>"; };
+		72F23B50259DAA16000CB328 /* Conversions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conversions.swift; sourceTree = "<group>"; };
 		72F23B6F25A08F3E000CB328 /* IntervalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalTests.swift; sourceTree = "<group>"; };
 		72F23B7325A09237000CB328 /* NoteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTests.swift; sourceTree = "<group>"; };
 		72F23B7925A0938F000CB328 /* EnharmonicSpellingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnharmonicSpellingTests.swift; sourceTree = "<group>"; };
@@ -100,7 +100,7 @@
 			children = (
 				72F23B44259DA9D7000CB328 /* EnharmonicSpelling.swift */,
 				72F23B45259DA9D7000CB328 /* HarmonyModel.swift */,
-				72F23B43259DA9D7000CB328 /* ConversionFunctions.swift */,
+				72F23B43259DA9D7000CB328 /* NoteTransforms.swift */,
 				72F23B4B259DAA16000CB328 /* Note+Harmony Types */,
 				72F23B39259DA8D6000CB328 /* Required Files */,
 			);
@@ -139,7 +139,7 @@
 				72F23B4E259DAA16000CB328 /* IntervalTypes.swift */,
 				72F23B4F259DAA16000CB328 /* ChordTypes.swift */,
 				72F23B4C259DAA16000CB328 /* ScaleTypes.swift */,
-				72F23B50259DAA16000CB328 /* TypeConversions.swift */,
+				72F23B50259DAA16000CB328 /* Conversions.swift */,
 			);
 			path = "Note+Harmony Types";
 			sourceTree = "<group>";
@@ -246,8 +246,8 @@
 				72F23B51259DAA16000CB328 /* ScaleTypes.swift in Sources */,
 				72F23B48259DA9D7000CB328 /* HarmonyModel.swift in Sources */,
 				72F23B53259DAA16000CB328 /* IntervalTypes.swift in Sources */,
-				72F23B46259DA9D7000CB328 /* ConversionFunctions.swift in Sources */,
-				72F23B55259DAA16000CB328 /* TypeConversions.swift in Sources */,
+				72F23B46259DA9D7000CB328 /* NoteTransforms.swift in Sources */,
+				72F23B55259DAA16000CB328 /* Conversions.swift in Sources */,
 				72F23B47259DA9D7000CB328 /* EnharmonicSpelling.swift in Sources */,
 				72F23B02259DA852000CB328 /* AppDelegate.swift in Sources */,
 				72F23B52259DAA16000CB328 /* NoteTypes.swift in Sources */,

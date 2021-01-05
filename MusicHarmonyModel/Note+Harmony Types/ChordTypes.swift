@@ -11,7 +11,6 @@ import Foundation
 //MARK: Chords
 public enum TonalChordType: String, CaseIterable {
     case major = "Maj", minor = "min", diminished = "o", augmented = "+", suspended = "Sus", dominantSeventh = "⁷", minorSeventh = "min⁷", majorSeventh = "Maj⁷", diminishedSeventh = "o⁷", halfDiminishedSeventh = "ø⁷"
-    //TODO: add other seventh chords? augmented, suspended4, suspended2? (and suspended 2 chord)
     
     init?(fromOrderedIntervalsInRootPosition intervals: [Interval]) {
         let icrIntervals = Interval.ValidIntervalsWithinIntervalClassRange()
@@ -85,7 +84,6 @@ public struct TonalChord {
 //        var chordType: TonalChordType? = nil
         var extensions: [ChordalExtensions] = []
         var intervalsFromRoot: [Interval] = []
-        //TODO:
         //1. Loop through each pair of notes and get [Interval] from root
         for note in otherNotes {
             if let intervalFromRoot = interval(between: root, and: note) {
@@ -112,9 +110,7 @@ public struct TonalChord {
         self.extensions = extensions
     }
     
-    
-    
-    //TODO: Init? methods from: collection of just PitchIntervalClasses
+        
 }
 
 

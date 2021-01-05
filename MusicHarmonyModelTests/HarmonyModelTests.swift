@@ -47,9 +47,3 @@ class HarmonyModelTests: XCTestCase {
 }
 
 
-//Test harmony types
-extension HarmonyModelTests {
-    
-    
-}
-
