@@ -41,7 +41,7 @@ func pitchIntervalClass(between note1: Note, and note2: Note) -> PitchIntervalCl
 func intervalDiatonicSize(between note1: Note, and note2: Note) -> IntervalDiatonicSize {
     let absStepsAway = abs(note1.noteLetter.abstractTonalScaleDegree - note2.noteLetter.abstractTonalScaleDegree)
     let stepsAway = (absStepsAway + NoteLetter.allCases.count) % NoteLetter.allCases.count
-    print(stepsAway)
+    print("stepsAway: ", stepsAway)
     if stepsAway == 0 {
         return note1.octave == note2.octave ? IntervalDiatonicSize.unison : IntervalDiatonicSize.octave
     }

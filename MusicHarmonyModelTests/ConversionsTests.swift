@@ -11,44 +11,36 @@ import XCTest
 
 //Test conversions between types
 class TestConversions: XCTestCase {
+    let bFlat1 = Note(noteLetter: .b, accidental: .flat, octave: Octave(rawValue: 1))
+    let gNatural1 = Note(noteLetter: .g, accidental: .natural, octave: Octave(rawValue: 1))
+    let fSharp0 = Note(noteLetter: .f, accidental: .sharp, octave: Octave(rawValue: 0))
+    let eFlat2 = Note(noteLetter: .e, accidental: .flat, octave: Octave(rawValue: 2))
+    let eSharp2 = Note(noteLetter: .e, accidental: .sharp, octave: Octave(rawValue: 2))
+    let fSharp1 = Note(noteLetter: .f, accidental: .sharp, octave: Octave(rawValue: 1))
+    let cFlat2 = Note(noteLetter: .c, accidental: .flat, octave: Octave(rawValue: 2))
+
     func testPitchIntervalClassBetweenNotes() {
-        guard let note1 = Note(pitchClass: .aSharp, noteLetter: .b, octave: Octave(rawValue: 1)) else { return }
-        guard let note2 = Note(pitchClass: .g, noteLetter: .g, octave: Octave(rawValue: 1)) else { return }
-        guard let note3 = Note(pitchClass: .fSharp, noteLetter: .f, octave: Octave(rawValue: 0)) else { return }
-        guard let note4 = Note(pitchClass: .dSharp, noteLetter: .e, octave: Octave(rawValue: 2)) else { return }
-        
-        XCTAssert(pitchIntervalClass(between: note1, and: note2) == .three)
-        XCTAssert(pitchIntervalClass(between: note3, and: note4) == .nine)
-        XCTAssert(pitchIntervalClass(between: note2, and: note3) == .one)
-        XCTAssert(pitchIntervalClass(between: note3, and: note2) == .one)
+        XCTAssert(pitchIntervalClass(between: bFlat1, and: gNatural1) == .three)
+        XCTAssert(pitchIntervalClass(between: fSharp0, and: eFlat2) == .nine)
+        XCTAssert(pitchIntervalClass(between: gNatural1, and: fSharp0) == .one)
+        XCTAssert(pitchIntervalClass(between: fSharp0, and: gNatural1) == .one)
     }
     
     func testIntervalDiatonicSizeBetweenNotes() {
-        guard let note1 = Note(pitchClass: .aSharp, noteLetter: .b, octave: Octave(rawValue: 1)) else { return }
-        guard let note2 = Note(pitchClass: .g, noteLetter: .g, octave: Octave(rawValue: 1)) else { return }
-        guard let note3 = Note(pitchClass: .fSharp, noteLetter: .f, octave: Octave(rawValue: 0)) else { return }
-        guard let note4 = Note(pitchClass: .f, noteLetter: .e, octave: Octave(rawValue: 2)) else { return }
-        guard let note5 = Note(pitchClass: .fSharp, noteLetter: .f, octave: Octave(rawValue: 1)) else { return }
-        
-        XCTAssert(intervalDiatonicSize(between: note1, and: note2) == .third)
-        XCTAssert(intervalDiatonicSize(between: note3, and: note4) == .second)
-        XCTAssert(intervalDiatonicSize(between: note1, and: note4) == .fifth)
-        XCTAssert(intervalDiatonicSize(between: note3, and: note2) == .second)
-        XCTAssert(intervalDiatonicSize(between: note3, and: note5) == .octave)
-        XCTAssert(intervalDiatonicSize(between: note1, and: note1) == .unison)
+        XCTAssert(intervalDiatonicSize(between: bFlat1, and: gNatural1) == .third)
+        XCTAssert(intervalDiatonicSize(between: fSharp0, and: eSharp2) == .second)
+        XCTAssert(intervalDiatonicSize(between: bFlat1, and: eSharp2) == .fifth)
+        XCTAssert(intervalDiatonicSize(between: fSharp0, and: gNatural1) == .second)
+        XCTAssert(intervalDiatonicSize(between: fSharp0, and: fSharp1) == .octave)
+        XCTAssert(intervalDiatonicSize(between: bFlat1, and: bFlat1) == .unison)
     }
     
     func testIntervalBetweenNotes() {
-        guard let note1 = Note(pitchClass: .aSharp, noteLetter: .b, octave: Octave(rawValue: 1)) else { return }
-        guard let note2 = Note(pitchClass: .g, noteLetter: .g, octave: Octave(rawValue: 1)) else { return }
-        guard let note3 = Note(pitchClass: .fSharp, noteLetter: .f, octave: Octave(rawValue: 0)) else { return }
-        guard let note4 = Note(pitchClass: .b, noteLetter: .c, octave: Octave(rawValue: 2)) else { return }
-        
-        guard let interval1 = interval(between: note1, and: note2) else { return }
-        guard let interval2 = interval(between: note2, and: note3) else { return }
-        guard let interval3 = interval(between: note3, and: note4) else { return }
-        guard let interval4 = interval(between: note1, and: note3) else { return }
-        guard let interval5 = interval(between: note3, and: note3) else { return }
+        guard let interval1 = interval(between: bFlat1, and: gNatural1) else { return }
+        guard let interval2 = interval(between: gNatural1, and: fSharp0) else { return }
+        guard let interval3 = interval(between: fSharp0, and: cFlat2) else { return }
+        guard let interval4 = interval(between: bFlat1, and: fSharp0) else { return }
+        guard let interval5 = interval(between: fSharp0, and: fSharp0) else { return }
                 
         XCTAssert(interval1.pitchIntervalClass == .three && interval1.quality == .minor && interval1.size == .third)
         XCTAssert(interval2.pitchIntervalClass == .one && interval2.quality == .minor && interval2.size == .second)
