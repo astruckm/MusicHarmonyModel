@@ -36,19 +36,15 @@ func pitchIntervalClass(between note1: Note, and note2: Note) -> PitchIntervalCl
     return .zero
 }
 
-//assumes the notes are already spelled correctly
-//FIXME: StepsAway method only working with notes within a tritone. Needs to know which note is higher, need octave for this, if no octave have to assume they are same octave--return value for that but print error message
 func intervalDiatonicSize(between note1: Note, and note2: Note) -> IntervalDiatonicSize {
-    let absStepsAway = abs(note1.noteLetter.abstractTonalScaleDegree - note2.noteLetter.abstractTonalScaleDegree)
-    let stepsAway = (absStepsAway + NoteLetter.allCases.count) % NoteLetter.allCases.count
-    print("stepsAway: ", stepsAway)
+    let higherNote = note1 >= note2 ? note1 : note2
+    let lowerNote = higherNote == note1 ? note2 : note1
+    let stepsAway = (higherNote.noteLetter.abstractTonalScaleDegree + NoteLetter.allCases.count - lowerNote.noteLetter.abstractTonalScaleDegree) % NoteLetter.allCases.count
     if stepsAway == 0 {
         return note1.octave == note2.octave ? IntervalDiatonicSize.unison : IntervalDiatonicSize.octave
     }
-    for size in IntervalDiatonicSize.allCases {
-        if size.numSteps == stepsAway {
-            return size
-        }
+    if let size = IntervalDiatonicSize.allCases.first(where: { $0.numSteps == stepsAway }) {
+        return size
     }
     print("Error deriving interval's within-octave diatonic size")
     return IntervalDiatonicSize.unison
@@ -60,12 +56,18 @@ func interval(between note1: Note, and note2: Note) -> Interval? {
     if let interval = Interval(intervalClass: intervalClass, size: diatonicSize) {
         return interval
     }
-    for possibleComponent in intervalClass.possibleIntervalComponents {
-        let possibleQuality = possibleComponent.quality
-        if let interval = Interval(quality: possibleQuality, size: diatonicSize) {
-            return interval
-        }
+    print("Unable to synthesize an interval between notes. Re-spelling the notes with BestEnharmonicSpellingDelegate and trying again.")
+    
+    var bestSpellingDelegate: BestEnharmonicSpellingDelegate? = nil
+    struct EnharmonicSpellingObject: BestEnharmonicSpellingDelegate { }
+    bestSpellingDelegate = EnharmonicSpellingObject()
+    guard let notes = bestSpellingDelegate?.bestSpelling(of: [note1.pitchClass, note2.pitchClass]) else { return nil }
+    let newIntervalClass = pitchIntervalClass(between: notes[0], and: notes[1])
+    let newDiatonicSize = intervalDiatonicSize(between: notes[0], and: notes[1])
+    if let interval = Interval(intervalClass: newIntervalClass, size: newDiatonicSize) {
+        return interval
     }
+    print("Unable to synthesize an interval between notes after re-spelling.")
     return nil
 }
 

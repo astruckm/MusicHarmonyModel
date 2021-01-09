@@ -24,15 +24,17 @@ class TestConversions: XCTestCase {
         XCTAssert(pitchIntervalClass(between: fSharp0, and: eFlat2) == .nine)
         XCTAssert(pitchIntervalClass(between: gNatural1, and: fSharp0) == .one)
         XCTAssert(pitchIntervalClass(between: fSharp0, and: gNatural1) == .one)
+        XCTAssert(pitchIntervalClass(between: fSharp0, and: cFlat2) == .five)
     }
     
     func testIntervalDiatonicSizeBetweenNotes() {
         XCTAssert(intervalDiatonicSize(between: bFlat1, and: gNatural1) == .third)
-        XCTAssert(intervalDiatonicSize(between: fSharp0, and: eSharp2) == .second)
-        XCTAssert(intervalDiatonicSize(between: bFlat1, and: eSharp2) == .fifth)
+        XCTAssert(intervalDiatonicSize(between: fSharp0, and: eSharp2) == .seventh)
+        XCTAssert(intervalDiatonicSize(between: bFlat1, and: eSharp2) == .fourth)
         XCTAssert(intervalDiatonicSize(between: fSharp0, and: gNatural1) == .second)
         XCTAssert(intervalDiatonicSize(between: fSharp0, and: fSharp1) == .octave)
         XCTAssert(intervalDiatonicSize(between: bFlat1, and: bFlat1) == .unison)
+        XCTAssert(intervalDiatonicSize(between: gNatural1, and: eSharp2) == .sixth)
     }
     
     func testIntervalBetweenNotes() {

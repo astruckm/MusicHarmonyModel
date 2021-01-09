@@ -9,6 +9,7 @@
 import Foundation
 
 //MARK: Chords
+//TODO: should only have triads here
 public enum TonalChordType: String, CaseIterable {
     case major = "Maj", minor = "min", diminished = "o", augmented = "+", suspended = "Sus", dominantSeventh = "⁷", minorSeventh = "min⁷", majorSeventh = "Maj⁷", diminishedSeventh = "o⁷", halfDiminishedSeventh = "ø⁷"
     
@@ -81,7 +82,6 @@ public struct TonalChord {
         
         var third: Note? = nil
         var fifth: Note? = nil
-//        var chordType: TonalChordType? = nil
         var extensions: [ChordalExtensions] = []
         var intervalsFromRoot: [Interval] = []
         //1. Loop through each pair of notes and get [Interval] from root
