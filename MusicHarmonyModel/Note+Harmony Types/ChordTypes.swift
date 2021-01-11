@@ -44,11 +44,11 @@ public enum TonalChordType: String, CaseIterable {
 }
 
 public enum ChordalExtensions: String, CaseIterable {
-    case second = "2", four = "4", six = "6", seven = "⁷", nine = "9", eleven = "11", thirteen = "13"
+    case two = "2", four = "4", six = "6", seven = "⁷", nine = "9", eleven = "11", thirteen = "13"
     
     var intervalSizeFromRoot: IntervalDiatonicSize {
         switch self {
-        case .second: return IntervalDiatonicSize.second
+        case .two: return IntervalDiatonicSize.second
         case .four: return IntervalDiatonicSize.fourth
         case .six: return IntervalDiatonicSize.sixth
         case .seven: return IntervalDiatonicSize.seventh
@@ -85,8 +85,10 @@ public struct TonalChord {
         var extensions: [ChordalExtensions] = []
         var intervalsFromRoot: [Interval] = []
         //1. Loop through each pair of notes and get [Interval] from root
-        for note in otherNotes {
+        //FIXME: needs to calculate interval from root in ROOT POSITION
+        for note in allNotes {
             if let intervalFromRoot = interval(between: root, and: note) {
+                intervalsFromRoot.append(intervalFromRoot)
                 //2. While doing that, for each note, assign it to third, fifth, or chordal extensions
                 switch intervalFromRoot.size {
                 case .third:
@@ -100,7 +102,6 @@ public struct TonalChord {
                         }
                     }
                 }
-                intervalsFromRoot.append(intervalFromRoot)
             }
         }
         self.third = third
