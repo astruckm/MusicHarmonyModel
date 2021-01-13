@@ -61,7 +61,7 @@ public enum NoteLetter: String, Equatable, CaseIterable, Hashable {
     }
 }
 
-public enum Accidental: String {
+public enum Accidental: String, CaseIterable {
     case doubleFlat = "𝄫"
     case flat = "♭"
     case natural = "♮"
@@ -104,7 +104,7 @@ public struct Note: Hashable {
     }
     
     //This init will guarantee you get a Note
-    init(noteLetter: NoteLetter, accidental: Accidental, octave: Octave?) {
+    init(noteLetter: NoteLetter, accidental: Accidental, octave: Octave? = nil) {
         let spelling = noteLetter.rawValue + accidental.rawValue
         let pitchClass = PitchClass.allCases.first(where: { $0.possibleSpellings.contains(spelling) })
         if let pitchClass = pitchClass {
@@ -119,7 +119,7 @@ public struct Note: Hashable {
         self.accidental = accidental
         self.octave = octave
     }
-    
+        
 
 }
 
@@ -139,3 +139,4 @@ extension Note: Comparable {
         return keyValue(pitch: (lhs.pitchClass, lhsOctave)) < keyValue(pitch: (rhs.pitchClass, rhsOctave))
     }
 }
+

@@ -99,6 +99,13 @@ class EnharmonicSpellingTests: XCTestCase {
 //        XCTAssert(bestEnharmonicSpellingDelegate.collectionShouldUseSharps(ambiguouslySpelledPC))
     }
     
+    func testNoteFifths() {
+        let cNatural = Note(noteLetter: .c, accidental: .natural)
+        print(noteFifths)
+        
+        XCTAssert(noteFifths.contains(cNatural))
+    }
+    
     
     
 }
