@@ -12,13 +12,16 @@ class EnharmonicSpellingTests: XCTestCase {
     
     struct EnharmonicSpellingObject: BestEnharmonicSpellingDelegate { }
     var bestEnharmonicSpellingDelegate: BestEnharmonicSpellingDelegate!
+    var noteFifthsContainer: NoteFifthsContainer!
     
     override func setUpWithError() throws {
         bestEnharmonicSpellingDelegate = EnharmonicSpellingObject()
+        noteFifthsContainer = NoteFifthsContainer()
     }
     
     override func tearDownWithError() throws {
         bestEnharmonicSpellingDelegate = nil
+        noteFifthsContainer = nil
     }
     
     //Test helper func--lowest abstraction level
@@ -101,9 +104,30 @@ class EnharmonicSpellingTests: XCTestCase {
     
     func testNoteFifths() {
         let cNatural = Note(noteLetter: .c, accidental: .natural)
-        print(noteFifths)
+        let dNatural = Note(noteLetter: .d, accidental: .natural)
+        let bDoubleSharp = Note(noteLetter: .b, accidental: .doubleSharp)
+        let noteFifths = noteFifthsContainer.noteFifths
         
-        XCTAssert(noteFifths.contains(cNatural))
+        XCTAssert(noteFifths[noteFifths.count/2] == dNatural)
+        XCTAssert(noteFifths.firstIndex(of: cNatural) == 15)
+        XCTAssert(noteFifths.firstIndex(of: bDoubleSharp) == 34)
+    }
+    
+    func testNoteFifthsLookup() {
+        let cNatural = Note(noteLetter: .c, accidental: .natural)
+        let dSharp = Note(noteLetter: .d, accidental: .sharp)
+        let eFlat = Note(noteLetter: .e, accidental: .flat)
+        let bDoubleSharp = Note(noteLetter: .b, accidental: .doubleSharp)
+        let lookup = noteFifthsContainer.noteFifthsLookup
+        
+        guard let cNatFifthsVal = lookup[cNatural] else { return }
+        guard let dSharpFifthsVal = lookup[dSharp] else { return }
+        guard let eFlatFifthsVal = lookup[eFlat] else { return }
+        guard let bDoubleSharpFifthsVal = lookup[bDoubleSharp] else { return }
+        
+        XCTAssert(cNatFifthsVal == 15)
+        XCTAssert(bDoubleSharpFifthsVal == 34)
+        XCTAssert(abs(eFlatFifthsVal-cNatFifthsVal) < abs(dSharpFifthsVal-cNatFifthsVal))
     }
     
     
