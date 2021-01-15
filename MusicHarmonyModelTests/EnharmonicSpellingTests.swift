@@ -10,12 +10,11 @@ import XCTest
 
 class EnharmonicSpellingTests: XCTestCase {
     
-    struct EnharmonicSpellingObject: BestEnharmonicSpellingDelegate { }
     var bestEnharmonicSpellingDelegate: BestEnharmonicSpellingDelegate!
     var noteFifthsContainer: NoteFifthsContainer!
     
     override func setUpWithError() throws {
-        bestEnharmonicSpellingDelegate = EnharmonicSpellingObject()
+        bestEnharmonicSpellingDelegate = EnharmonicSpeller()
         noteFifthsContainer = NoteFifthsContainer()
     }
     
@@ -73,8 +72,8 @@ class EnharmonicSpellingTests: XCTestCase {
         guard let aFlat = Note(pitchClass: .gSharp, noteLetter: .a, octave: nil) else { return }
 
         
-        XCTAssert(bestEnharmonicSpellingDelegate.bestSpelling(of: shouldBeSharpsPC).sorted() == [cSharp, eNatural, gSharp])
-        XCTAssert(bestEnharmonicSpellingDelegate.bestSpelling(of: shouldBeFlatsPC).sorted() == [dFlat, fNatural, aFlat])
+        XCTAssert(bestEnharmonicSpellingDelegate.allSharpsOrAllFlats(of: shouldBeSharpsPC).sorted() == [cSharp, eNatural, gSharp])
+        XCTAssert(bestEnharmonicSpellingDelegate.allSharpsOrAllFlats(of: shouldBeFlatsPC).sorted() == [dFlat, fNatural, aFlat])
     }
     
     func testCorrectAccidentalTypeAtonal() {
@@ -83,7 +82,7 @@ class EnharmonicSpellingTests: XCTestCase {
         guard let fNatural = Note(pitchClass: .f, noteLetter: .f, octave: nil) else { return }
         let bFlat = Note(noteLetter: .b, accidental: .flat, octave: nil)
 
-        let atonalPCBestSpelling = bestEnharmonicSpellingDelegate.bestSpelling(of: atonalPC).sorted()
+        let atonalPCBestSpelling = bestEnharmonicSpellingDelegate.allSharpsOrAllFlats(of: atonalPC).sorted()
         
         XCTAssert(atonalPCBestSpelling == [eNatural, fNatural, bFlat])
     }
@@ -96,7 +95,7 @@ class EnharmonicSpellingTests: XCTestCase {
         let gNatural = Note(noteLetter: .g, accidental: .natural, octave: nil)
         let bNatural = Note(noteLetter: .b, accidental: .natural, octave: nil)
         
-        let ambiguouslySpelledBestSpelling = bestEnharmonicSpellingDelegate.bestSpelling(of: ambiguouslySpelledPC).sorted()
+        let ambiguouslySpelledBestSpelling = bestEnharmonicSpellingDelegate.allSharpsOrAllFlats(of: ambiguouslySpelledPC).sorted()
         
         XCTAssert(ambiguouslySpelledBestSpelling == [cSharp, fNatural, gNatural, bNatural])
 //        XCTAssert(bestEnharmonicSpellingDelegate.collectionShouldUseSharps(ambiguouslySpelledPC))

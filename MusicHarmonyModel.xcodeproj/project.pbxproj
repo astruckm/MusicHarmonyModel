@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		723655D525AF0C440038D9FE /* NoteFifths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723655D425AF0C440038D9FE /* NoteFifths.swift */; };
+		72D0F89825B1836B007BB0E1 /* AllSharpsOrFlats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D0F89725B1836B007BB0E1 /* AllSharpsOrFlats.swift */; };
 		72F23B02259DA852000CB328 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F23B01259DA852000CB328 /* AppDelegate.swift */; };
 		72F23B06259DA853000CB328 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72F23B05259DA853000CB328 /* Assets.xcassets */; };
 		72F23B15259DA853000CB328 /* HarmonyModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F23B14259DA853000CB328 /* HarmonyModelTests.swift */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		723655D425AF0C440038D9FE /* NoteFifths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteFifths.swift; sourceTree = "<group>"; };
+		72D0F89725B1836B007BB0E1 /* AllSharpsOrFlats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSharpsOrFlats.swift; sourceTree = "<group>"; };
 		72F23AFE259DA852000CB328 /* MusicHarmonyModel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicHarmonyModel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72F23B01259DA852000CB328 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		72F23B05259DA853000CB328 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				72F23B44259DA9D7000CB328 /* EnharmonicSpelling.swift */,
+				72D0F89725B1836B007BB0E1 /* AllSharpsOrFlats.swift */,
 				723655D425AF0C440038D9FE /* NoteFifths.swift */,
 			);
 			path = EnharmonicSpelling;
@@ -254,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				72F23B54259DAA16000CB328 /* ChordTypes.swift in Sources */,
+				72D0F89825B1836B007BB0E1 /* AllSharpsOrFlats.swift in Sources */,
 				723655D525AF0C440038D9FE /* NoteFifths.swift in Sources */,
 				72F23B51259DAA16000CB328 /* ScaleTypes.swift in Sources */,
 				72F23B48259DA9D7000CB328 /* HarmonyModel.swift in Sources */,

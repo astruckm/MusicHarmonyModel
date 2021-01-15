@@ -59,9 +59,8 @@ func interval(between note1: Note, and note2: Note) -> Interval? {
     print("Unable to synthesize an interval between notes. Re-spelling the notes with BestEnharmonicSpellingDelegate and trying again.")
     
     var bestSpellingDelegate: BestEnharmonicSpellingDelegate? = nil
-    struct EnharmonicSpellingObject: BestEnharmonicSpellingDelegate { }
-    bestSpellingDelegate = EnharmonicSpellingObject()
-    guard let notes = bestSpellingDelegate?.bestSpelling(of: [note1.pitchClass, note2.pitchClass]) else { return nil }
+    bestSpellingDelegate = EnharmonicSpeller()
+    guard let notes = bestSpellingDelegate?.allSharpsOrAllFlats(of: [note1.pitchClass, note2.pitchClass]) else { return nil }
     let newIntervalClass = pitchIntervalClass(between: notes[0], and: notes[1])
     let newDiatonicSize = intervalDiatonicSize(between: notes[0], and: notes[1])
     if let interval = Interval(intervalClass: newIntervalClass, size: newDiatonicSize) {
