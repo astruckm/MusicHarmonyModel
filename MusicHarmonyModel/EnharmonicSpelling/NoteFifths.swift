@@ -37,4 +37,12 @@ struct NoteFifthsContainer {
     }
 }
 
+extension BestEnharmonicSpellingDelegate {
+    func fewestNoteFifths(_ pitchCollection: [PitchClass]) -> [Note] {
+        //Probably use naive solution of going through each possible spelling and compare it to all other possible spellings using it, find min of note fifths
+        
+        return []
+    }
+}
+
 
