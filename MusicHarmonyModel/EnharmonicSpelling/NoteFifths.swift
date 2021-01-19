@@ -39,9 +39,42 @@ struct NoteFifthsContainer {
 
 extension BestEnharmonicSpellingDelegate {
     func fewestNoteFifths(_ pitchCollection: [PitchClass]) -> [Note] {
-        //Probably use naive solution of going through each possible spelling and compare it to all other possible spellings using it, find min of note fifths
+        guard !pitchCollection.isEmpty else { return [] }
+        guard pitchCollection.count > 1 else {
+            let letterAccidental = pitchCollection[0].possibleLetterAccidentalCombos[0]
+            let note = Note(noteLetter: letterAccidental.letter,
+                            accidental: letterAccidental.accidental)
+            return [note]
+        }
+        let sortedPCs = pitchCollection.sorted()
+        let letterAccidentalCombos = generateLetterAccidentalCombinations()
         
+        // 2. loop through first pColl possibleLetterAccidentalCombos
+        // 3. if 1 semitone above, don't evaluate possibleLetterAccidentalCombos that have less abstractTonalScaleDegree % NoteLetter.allCase.count
+        // 4. if 2 semitones above, don't evaluate same letter name
         return []
+    }
+    
+    // Filter out any black keys with double sharp/flats
+    private func generateLetterAccidentalCombinations() -> [[(letter: NoteLetter,
+                                                              accidental: Accidental)]] {
+        let allPossibleLetterAccidentalCombos: [[(letter: NoteLetter,
+                                                  accidental: Accidental)]] =
+            PitchClass.allCases.map({ $0.possibleLetterAccidentalCombos })
+        var letterAccidentalCombos: [[(letter: NoteLetter,
+                                          accidental: Accidental)]] = []
+        for (idx, combo) in allPossibleLetterAccidentalCombos.enumerated() {
+            if idx == 1 || idx == 3 || idx == 6 || idx == 8 || idx == 10 {
+                let newCombo = combo.filter {
+                    $0.accidental == .doubleFlat || $0.accidental == .doubleSharp
+                }
+                letterAccidentalCombos.append(newCombo)
+            } else {
+                letterAccidentalCombos.append(combo)
+            }
+        }
+
+        return letterAccidentalCombos
     }
 }
 
