@@ -9,7 +9,7 @@ import Foundation
 
 //All possible spelled notes arranged in a "spiral of fifths" array where adjacent notes in the array are a perfect fifth apart
 struct NoteFifthsContainer {
-    var noteFifths: [Note] = {
+    static var noteFifths: [Note] = {
         var notes = [Note]()
         let noteLetters = NoteLetter.allCases
         let accidentals = Accidental.allCases
@@ -28,7 +28,7 @@ struct NoteFifthsContainer {
         return notes
     }()
 
-    var noteFifthsLookup: [Note: Int] {
+    static var noteFifthsLookup: [Note: Int] {
         var lookup = [Note: Int]()
         for (i, note) in noteFifths.enumerated() {
             lookup[note] = i
@@ -48,10 +48,15 @@ extension BestEnharmonicSpellingDelegate {
         }
         let sortedPCs = pitchCollection.sorted()
         let letterAccidentalCombos = generateLetterAccidentalCombinations()
-        
-        // 2. loop through first pColl possibleLetterAccidentalCombos
-        // 3. if 1 semitone above, don't evaluate possibleLetterAccidentalCombos that have less abstractTonalScaleDegree % NoteLetter.allCase.count
-        // 4. if 2 semitones above, don't evaluate same letter name
+        // NOTE: if 1 semitone above, don't evaluate possibleLetterAccidentalCombos that have less abstractTonalScaleDegree % NoteLetter.allCase.count
+        // NOTE: if 2 semitones above, don't evaluate same letter name
+        for i in 0..<pitchCollection.count {
+            for pc in sortedPCs {
+                for spellings in letterAccidentalCombos {
+                    
+                }
+            }
+        }
         return []
     }
     
@@ -75,6 +80,21 @@ extension BestEnharmonicSpellingDelegate {
         }
 
         return letterAccidentalCombos
+    }
+    
+    private func minNoteFifthsNotes(_ noteCollections: [[Note]]) -> [Note] {
+        guard noteCollections.count > 1 else { return noteCollections.isEmpty ? [] : noteCollections[0] }
+        
+        var minFifths = Int.max
+        var minFifthsNoteCollection: [Note] = []
+        for noteCollection in noteCollections {
+            let numFifths = noteCollection.map({ NoteFifthsContainer.noteFifthsLookup[$0] ?? 0 }).reduce(0, { abs($0 - $1) })
+            if numFifths < minFifths {
+                minFifths = numFifths
+                minFifthsNoteCollection = noteCollection
+            }
+        }
+        return minFifthsNoteCollection
     }
 }
 
