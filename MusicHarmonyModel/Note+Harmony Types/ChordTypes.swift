@@ -8,7 +8,6 @@
 
 import Foundation
 
-//MARK: Chords
 //TODO: should only have triads here
 public enum TonalChordType: String, CaseIterable {
     case major = "Maj", minor = "min", diminished = "o", augmented = "+", suspended = "Sus", dominantSeventh = "⁷", minorSeventh = "min⁷", majorSeventh = "Maj⁷", diminishedSeventh = "o⁷", halfDiminishedSeventh = "ø⁷"
@@ -75,7 +74,7 @@ public struct TonalChord {
         self.root = root
         //Eliminate duplicates then sort into root position
         var allNotes = [root] + otherNotes
-        allNotes = Array(Set<Note>(otherNotes))
+        allNotes = Array(Set<Note>(allNotes))
         allNotes.sort { (($0.pitchClass.rawValue - root.pitchClass.rawValue + PitchClass.allCases.count) % PitchClass.allCases.count) < (($1.pitchClass.rawValue - root.pitchClass.rawValue + PitchClass.allCases.count) % PitchClass.allCases.count)
         }
         print("allNotes sorted: ", allNotes)

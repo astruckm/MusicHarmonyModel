@@ -90,7 +90,6 @@ public struct Note: Hashable {
     let accidental: Accidental
     let octave: Octave?
             
-    //Eventually delete or replace this
     init?(pitchClass: PitchClass, noteLetter: NoteLetter, octave: Octave?) {
         guard let spelling = pitchClass.possibleLetterAccidentalCombos.first(where: { $0.letter == noteLetter}) else {
             print("Note is not possible: pitch class and note letter do not match")

@@ -12,8 +12,8 @@ import Foundation
 
 // Implementation that uses all sharps or all flats
 // Takes notes as spelled in all flats or all sharps, and finds the number of "suboptimal" pairs (i.e. badly spelled, such as E-Ab when should be E-G#). Whichever has fewer is the best spelling
-extension BestEnharmonicSpellingDelegate {
-    func allSharpsOrAllFlats(of pitchCollection: [PitchClass]) -> [Note] {
+extension BestEnharmonicSpelling {
+    public func allSharpsOrAllFlats(of pitchCollection: [PitchClass]) -> [Note] {
         let allSharps: [Note] = pitchCollection.compactMap { Note(pitchClass: $0,
                                                                   noteLetter: $0.isBlackKey ? $0.possibleLetterAccidentalCombos.first(where: { $0.accidental == .sharp })!.letter : $0.possibleLetterAccidentalCombos.first(where: { $0.accidental == .natural })!.letter,
                                                                   octave: nil) }
@@ -25,7 +25,7 @@ extension BestEnharmonicSpellingDelegate {
     }
     
     //Compares each possible pair, assumes there are no duplicate notes
-    /*private*/ func pairsWithSuboptimalSpellings(among notes: [Note]) -> [(Note, Note)] {
+    func pairsWithSuboptimalSpellings(among notes: [Note]) -> [(Note, Note)] {
         guard notes.count >= 2 else { return [] }
         var subOptimallySpelledPairs: [(Note, Note)] = []
         for noteIndex in 0..<(notes.count-1) {
@@ -39,7 +39,7 @@ extension BestEnharmonicSpellingDelegate {
         return subOptimallySpelledPairs
     }
     
-    /*private*/ func pairIsSpelledSuboptimally(_ pair: (Note, Note)) -> Bool {
+    func pairIsSpelledSuboptimally(_ pair: (Note, Note)) -> Bool {
         let rawStepsAway = abs(pair.0.noteLetter.abstractTonalScaleDegree - pair.1.noteLetter.abstractTonalScaleDegree)
         let minimumStepsAway = rawStepsAway <= 3 ? rawStepsAway : 7 - rawStepsAway ///i.e. how close the two notes COULD be
         let semitonesAway = abs(pair.0.pitchClass.rawValue - pair.1.pitchClass.rawValue)
