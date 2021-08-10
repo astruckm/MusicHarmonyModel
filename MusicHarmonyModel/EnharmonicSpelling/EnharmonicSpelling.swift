@@ -14,15 +14,62 @@ protocol EnharmonicSpelling {
 }
 
 extension EnharmonicSpelling {
-    func numPossibleSpellingCombinations(in pitchCollection: [PitchClass]) -> Int {
-        guard !pitchCollection.isEmpty else { return 0 }
+    /// Gives all possible notes in a pitch collection arranged by pitch class
+    /// - Parameter pitchCollection: input pitch collection
+    /// - Returns: An array of arrays where the outer array consists of the Pitch Classes, and each inner array contains the possible Notes for its pitch class
+    func allPossibleNotes(of pitchCollection: [PitchClass]) -> [[Note]] {
+        guard !pitchCollection.isEmpty else { return [] }
         let allPossibleLetterAccidentalCombos: [[(letter: NoteLetter, accidental: Accidental)]] =
             pitchCollection.map({ $0.possibleLetterAccidentalCombos })
-        return allPossibleLetterAccidentalCombos.map { $0.count }
-                                                .reduce(1, { $0 * $1 })
+        let allPossibleNotes = allPossibleLetterAccidentalCombos.map { combo in
+            combo.map { spelling in
+                Note(noteLetter: spelling.letter, accidental: spelling.accidental)
+            }
+        }
+        return allPossibleNotes
     }
     
-    func generateAllNoteCombinations(from pitchCollection: [PitchClass]) -> [[Note]] { return [] }
+    func numOfNoteSpellingCombinations(of pitchCollection: [PitchClass]) -> Int {
+        let possibleNotes = allPossibleNotes(of: pitchCollection)
+        return possibleNotes
+            .map { $0.count }
+            .reduce(1, { $0 * $1} )
+    }
+        
+    func generateAllNoteCombinations(from pitchCollection: [PitchClass]) -> [[Note]] {
+        guard !pitchCollection.isEmpty else { return [] }
+        guard pitchCollection.count > 1 else { return pitchCollection.first?.possibleLetterAccidentalCombos.map { [Note(noteLetter: $0.letter, accidental: $0.accidental) ] } ?? [] }
+        let possibleNotes = allPossibleNotes(of: pitchCollection)
+        let numNoteSpellingCombos = possibleNotes.map { $0.count }.reduce(1, { $0 * $1} )
+        
+        var noteCombos: [[Note]] = Array(repeating: [Note](), count: numNoteSpellingCombos)
+        var currentWindowSize = numNoteSpellingCombos
+        
+        //loop through Notes within loop of num repetitions within loop of 2nd through last pc arrays
+            //while doing this, keep track of index into which to append Note
+        for pcNoteGroup in possibleNotes {
+            print("\npcNoteGroup: ", pcNoteGroup)
+            let numRepetitions = numNoteSpellingCombos / currentWindowSize
+            let noteWindowSize = currentWindowSize / pcNoteGroup.count
+            for repetitionCounter in 0..<numRepetitions {
+                print("repetitionCounter: ", repetitionCounter)
+                for (pcNoteGroupIdx, note) in pcNoteGroup.enumerated() {
+                    print("\nnote: ", note)
+                    let firstIndex = (currentWindowSize * repetitionCounter) + (noteWindowSize * pcNoteGroupIdx)
+                    let lastIndex = firstIndex + noteWindowSize - 1
+                    for idx in firstIndex...lastIndex {
+                        print("index: ", idx)
+                        noteCombos[idx].append(note)
+                    }
+                }
+            }
+            currentWindowSize /= pcNoteGroup.count
+            print("\ncurrentWindowSize is now: ", currentWindowSize)
+        }
+        
+        return noteCombos
+    }
+    
 }
 
 struct EnharmonicSpeller: EnharmonicSpelling { }

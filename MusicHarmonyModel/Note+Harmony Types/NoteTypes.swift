@@ -61,7 +61,7 @@ public enum NoteLetter: String, Equatable, CaseIterable, Hashable {
     }
 }
 
-public enum Accidental: String, CaseIterable {
+public enum Accidental: String, Equatable, CaseIterable {
     case doubleFlat = "𝄫"
     case flat = "♭"
     case natural = "♮"
@@ -84,7 +84,7 @@ public enum Octave: Int, Equatable, CaseIterable, Hashable {
     case zero = 0, one, two, three, four, five, six, seven, eight
 }
 
-public struct Note: Hashable {
+public struct Note: Hashable, Equatable {
     let pitchClass: PitchClass
     let noteLetter: NoteLetter
     let accidental: Accidental
