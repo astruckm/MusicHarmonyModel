@@ -35,7 +35,10 @@ extension EnharmonicSpelling {
             .map { $0.count }
             .reduce(1, { $0 * $1} )
     }
-        
+    
+    /// Give all possible chord spellings for a given pitch collection
+    /// - Parameter pitchCollection: input pitch collection
+    /// - Returns: An array of arrays where the outer array consists of all possible combinations of groups of notes ("chords"), and each inner array contains the Notes of the group
     func generateAllNoteCombinations(from pitchCollection: [PitchClass]) -> [[Note]] {
         guard !pitchCollection.isEmpty else { return [] }
         guard pitchCollection.count > 1 else { return pitchCollection.first?.possibleLetterAccidentalCombos.map { [Note(noteLetter: $0.letter, accidental: $0.accidental) ] } ?? [] }
@@ -48,23 +51,18 @@ extension EnharmonicSpelling {
         //loop through Notes within loop of num repetitions within loop of 2nd through last pc arrays
             //while doing this, keep track of index into which to append Note
         for pcNoteGroup in possibleNotes {
-            print("\npcNoteGroup: ", pcNoteGroup)
             let numRepetitions = numNoteSpellingCombos / currentWindowSize
             let noteWindowSize = currentWindowSize / pcNoteGroup.count
             for repetitionCounter in 0..<numRepetitions {
-                print("repetitionCounter: ", repetitionCounter)
                 for (pcNoteGroupIdx, note) in pcNoteGroup.enumerated() {
-                    print("\nnote: ", note)
                     let firstIndex = (currentWindowSize * repetitionCounter) + (noteWindowSize * pcNoteGroupIdx)
                     let lastIndex = firstIndex + noteWindowSize - 1
                     for idx in firstIndex...lastIndex {
-                        print("index: ", idx)
                         noteCombos[idx].append(note)
                     }
                 }
             }
             currentWindowSize /= pcNoteGroup.count
-            print("\ncurrentWindowSize is now: ", currentWindowSize)
         }
         
         return noteCombos
@@ -72,7 +70,7 @@ extension EnharmonicSpelling {
     
 }
 
-struct EnharmonicSpeller: EnharmonicSpelling { }
+struct EnharmonicSpeller: EnharmonicSpelling { } // For testing
 
 public protocol BestEnharmonicSpelling {
     func allSharpsOrAllFlats(of pitchCollection: [PitchClass]) -> [Note]
