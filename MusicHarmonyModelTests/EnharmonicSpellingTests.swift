@@ -75,6 +75,25 @@ class EnharmonicSpellingTests: XCTestCase {
         XCTAssert(noteCombos2.contains([Constants.gSharp, Constants.bSharp, Constants.dSharp]))
     }
     
+    func testNoteFifthsContainer() {
+        print(NoteFifthsContainer.noteFifths)
+    }
+    
+    func testMinNoteFifths() {
+        let noteCombos1 = enharmonicSpeller.generateAllNoteCombinations(from: [.dSharp])
+        let noteCombos2 = enharmonicSpeller.generateAllNoteCombinations(from: [.gSharp, .c, .dSharp])
+        let noteCombos3 = enharmonicSpeller.generateAllNoteCombinations(from: [.aSharp, .c, .dSharp, .f, .aSharp])
+        let minNoteFifths0 = bestEnharmonicSpeller.minNoteFifthsNotes([])
+        let minNoteFifths1 = bestEnharmonicSpeller.minNoteFifthsNotes(noteCombos1)
+        let minNoteFifths2 = bestEnharmonicSpeller.minNoteFifthsNotes(noteCombos2)
+        let minNoteFifths3 = bestEnharmonicSpeller.minNoteFifthsNotes(noteCombos3)
+        
+        XCTAssert(minNoteFifths0 == [])
+        XCTAssert(minNoteFifths1.count == 1) // FIXME
+        XCTAssert(Set(minNoteFifths2) == Set([Constants.aFlat, Constants.cNatural, Constants.eFlat]))
+        
+    }
+    
     //Test helper func--lowest abstraction level
     func testPairIsSpelledSuboptimally() {
         XCTAssert(!bestEnharmonicSpeller.pairIsSpelledSuboptimally((Constants.eNatural, Constants.fSharp)))

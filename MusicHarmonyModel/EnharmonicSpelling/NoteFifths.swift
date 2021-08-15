@@ -76,59 +76,28 @@ extension BestEnharmonicSpelling {
         return minNoteFifthsNotes(possibleNotesGroups)
     }
     
-    func generateAllNoteCombinations(from pitchCollection: [PitchClass]) -> [[Note]] {
-        guard !pitchCollection.isEmpty else { return [] }
-        let allPossibleLetterAccidentalCombos: [[(letter: NoteLetter,
-                                                  accidental: Accidental)]] =
-            pitchCollection.map({ $0.possibleLetterAccidentalCombos })
-        var noteCombos: [[Note]] = Array(repeating: [Note](),
-                                                 count: allPossibleLetterAccidentalCombos
-                                                    .map { $0.count }
-                                                    .reduce(1, { $0 * $1 }))
-        
-        var currentWindowSize = noteCombos.count
-        combosLoop: for combo in allPossibleLetterAccidentalCombos {
-            let numRepetitions = noteCombos.count / currentWindowSize
-            let currentDivisor = combo.count
-            currentWindowSize /= currentDivisor
-
-            // This process needs to be repeated numRepetitions times (e.g. for Ab major, 1x, 2x, then 6x)
-            for counterIdx in 1...numRepetitions {
-                print("repetition: \(String(counterIdx)) for combo: \(combo.first?.letter)\(combo.first?.accidental)")
-                pairsLoop: for (pairIdx, pair) in combo.enumerated() {
-                    let note = Note(noteLetter: pair.letter, accidental: pair.accidental)
-                    let startingIndex = pairIdx * currentWindowSize * (counterIdx)
-                    let indexRange = startingIndex...(startingIndex + currentWindowSize - 1)
-                    // put note into noteSpellingCombos at indexRange subarrays, at position index in each subarray
-                    indexRange.forEach { noteCombos[$0].append(note) }
-                }
-            }
-        }
-        
-        
-        // filter out any double flats or double sharps
-//        if (pcVal == 1 || pcVal == 3 || pcVal == 6 || pcVal == 8 || pcVal == 10) && (note.accidental == .doubleFlat || note.accidental == .doubleSharp) {
-//            continue combosLoop
-//        }
-
-        // filter out combos with duplicate note letters
-//        guard chordSpelling.count == Set(chordSpelling).count else { continue }
-//        noteCombos.append(chordSpelling)
-
-
-        return noteCombos
-    }
-    
+    /// Finds the group of Notes with the lowest Note Fifths value. The function is meant to evaluate an input noteCollection each Note group (the inner arrays), respectively, contains the same pitch classes.
+    /// - Parameter noteCollections: A group of groups of Notes
+    /// - Returns: The group with the minimum Note Fifths value. In the case of ties, it will output the first group.
     func minNoteFifthsNotes(_ noteCollections: [[Note]]) -> [Note] {
         guard noteCollections.count > 1 else { return noteCollections.isEmpty ? [] : noteCollections[0] }
         
         var minFifths = Int.max
         var minFifthsNoteCollection: [Note] = []
         for noteCollection in noteCollections {
-            let numFifths = noteCollection.map({ NoteFifthsContainer.noteFifthsLookup[$0] ?? 0 }).reduce(0, { abs($0 - $1) })
+            let indicesInLookup = noteCollection.map { NoteFifthsContainer.noteFifthsLookup[$0] ?? 0 }.sorted()
+            var numFifths = 0
+            for i in 0..<(indicesInLookup.count-1) {
+                for j in (i+1)..<indicesInLookup.count {
+                    numFifths += indicesInLookup[j] - indicesInLookup[i]
+                }
+            }
+            print("noteCollection: \(noteCollection) with indicesInLookup: \(indicesInLookup)\nhas numFifths: \(numFifths)")
             if numFifths < minFifths {
                 minFifths = numFifths
                 minFifthsNoteCollection = noteCollection
+            } else if numFifths == minFifths {
+                // Handle ties: perhaps make it the collection that has notes closest to the center (E natural? mean of closest to 24?)
             }
         }
         return minFifthsNoteCollection

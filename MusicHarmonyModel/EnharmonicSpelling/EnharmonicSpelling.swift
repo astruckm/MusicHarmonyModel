@@ -9,7 +9,7 @@
 
 import Foundation
 
-protocol EnharmonicSpelling {
+public protocol EnharmonicSpelling {
     func generateAllNoteCombinations(from pitchCollection: [PitchClass]) -> [[Note]]
 }
 
@@ -33,7 +33,7 @@ extension EnharmonicSpelling {
         let possibleNotes = allPossibleNotes(of: pitchCollection)
         return possibleNotes
             .map { $0.count }
-            .reduce(1, { $0 * $1} )
+            .reduce(1, { $0 * $1 } )
     }
     
     /// Give all possible chord spellings for a given pitch collection
@@ -72,10 +72,10 @@ extension EnharmonicSpelling {
 
 struct EnharmonicSpeller: EnharmonicSpelling { } // For testing
 
-public protocol BestEnharmonicSpelling {
+public protocol BestEnharmonicSpelling: EnharmonicSpelling {
     func allSharpsOrAllFlats(of pitchCollection: [PitchClass]) -> [Note]
     func fewestNoteFifths(_ pitchCollection: [PitchClass]) -> [Note]
-    //TODO: other implementations: try using number of fifths apart, user input whether ascending or descending context, specify a scale, special cases like harp, etc
+    //TODO: other implementations: user input whether ascending or descending context, specify a scale, special cases like harp, etc
 }
 
 
