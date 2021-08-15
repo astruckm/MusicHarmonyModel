@@ -78,5 +78,4 @@ public protocol BestEnharmonicSpelling: EnharmonicSpelling {
     //TODO: other implementations: user input whether ascending or descending context, specify a scale, special cases like harp, etc
 }
 
-
 struct BestEnharmonicSpeller: BestEnharmonicSpelling { } // For testing

@@ -97,7 +97,14 @@ extension BestEnharmonicSpelling {
                 minFifths = numFifths
                 minFifthsNoteCollection = noteCollection
             } else if numFifths == minFifths {
-                // Handle ties: perhaps make it the collection that has notes closest to the center (E natural? mean of closest to 24?)
+                let midNoteIdx = NoteFifthsContainer.noteFifths.count / 2
+                let noteCollectionMeanIdx: Float = Float(indicesInLookup.reduce(0, { $0 + $1 })) / Float(indicesInLookup.count)
+                let indicesInCurrentMin = minFifthsNoteCollection.map { NoteFifthsContainer.noteFifthsLookup[$0] ?? 0 }
+                let currentMinMeanIdx: Float = Float(indicesInCurrentMin.reduce(0, { $0 + $1 })) / Float(indicesInCurrentMin.count)
+                if (noteCollectionMeanIdx - Float(midNoteIdx)) < (currentMinMeanIdx - Float(midNoteIdx)) {
+                    minFifths = numFifths
+                    minFifthsNoteCollection = noteCollection
+                }
             }
         }
         return minFifthsNoteCollection
