@@ -88,9 +88,10 @@ class EnharmonicSpellingTests: XCTestCase {
         let minNoteFifths2 = bestEnharmonicSpeller.minNoteFifthsNotes(noteCombos2)
         let minNoteFifths3 = bestEnharmonicSpeller.minNoteFifthsNotes(noteCombos3)
         
-        XCTAssert(minNoteFifths0 == [])
+        XCTAssertTrue(minNoteFifths0 == [])
         XCTAssertTrue(minNoteFifths1 == [Constants.dSharp] || minNoteFifths1 == [Constants.eFlat])
-        XCTAssert(Set(minNoteFifths2) == Set([Constants.aFlat, Constants.cNatural, Constants.eFlat]))
+        XCTAssertTrue(Set(minNoteFifths2) == Set([Constants.aFlat, Constants.cNatural, Constants.eFlat]))
+        XCTAssertTrue(Set(minNoteFifths3) == Set([Constants.bFlat, Constants.cNatural, Constants.eFlat, Constants.fNatural]))
         
     }
     

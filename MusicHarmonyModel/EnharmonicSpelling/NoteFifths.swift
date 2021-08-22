@@ -61,15 +61,6 @@ extension BestEnharmonicSpelling {
     /// - Returns: The group with the minimum Note Fifths value. In the case of ties, it will output the first group.
     func minNoteFifthsNotes(_ noteCollections: [[Note]]) -> [Note] {
         guard noteCollections.count > 1 else { return noteCollections.isEmpty ? [] : noteCollections[0] }
-//        guard let first = noteCollections.first, first.count > 1 else {
-//            if let first = noteCollections.first {
-//                
-//            } else {
-//                return []
-//            }
-//            return []
-//        }
-        // TODO: check that count of subarrays > 1
         
         var minFifths = Int.max
         var minFifthsNoteCollection: [Note] = []
