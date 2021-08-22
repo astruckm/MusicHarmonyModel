@@ -51,36 +51,25 @@ extension BestEnharmonicSpelling {
                             accidental: letterAccidental.accidental)
             return [note]
         }
-        let sortedPCs = pitchCollection.sorted()
-        let letterAccidentalCombos = generateAllNoteCombinations(from: pitchCollection)
-        // NOTE: if 1 semitone above, don't evaluate possibleLetterAccidentalCombos that have less abstractTonalScaleDegree % NoteLetter.allCase.count
-        // NOTE: if 2 semitones above, don't evaluate same letter name
-        var possibleNotesGroups: [[Note]] = [] /// array of all the possible Note spelling combinations in the pitch collection
-        for idx in sortedPCs.indices {
-            let pivotPC = sortedPCs[idx]
-            // get a pitch from sortedPCs
-            for spelling in letterAccidentalCombos[pivotPC.rawValue] {
-//                let note = Note(noteLetter: spelling.letter, accidental: spelling.accidental)
-                // append to possibleNotesGroups
-            }
-            
-            for variableIdx in (idx+1)...sortedPCs.indices.max()! {
-                let pc = sortedPCs[variableIdx]
-                for spelling in letterAccidentalCombos[pc.rawValue] {
-//                    let note = Note(noteLetter: spelling.letter, accidental: spelling.accidental)
-                    // append to possibleNotesGroups
-                }
-            }
-        }
+        let allNoteCombos = generateAllNoteCombinations(from: pitchCollection)
         
-        return minNoteFifthsNotes(possibleNotesGroups)
+        return minNoteFifthsNotes(allNoteCombos)
     }
     
-    /// Finds the group of Notes with the lowest Note Fifths value. The function is meant to evaluate an input noteCollection each Note group (the inner arrays), respectively, contains the same pitch classes.
-    /// - Parameter noteCollections: A group of groups of Notes
+    /// Finds the group of Notes with the lowest Note Fifths value. The function is meant to evaluate an input noteCollection each Note group (the inner arrays), respectively, contains the same pitch classes. In the case of ties, outputs the group with mean average closest to the mid value of the NoteFifths array.
+    /// - Parameter noteCollections: A group of groups of Notes. If the subarrays don't all have the same count, not guaranteed to give an appropriate answer
     /// - Returns: The group with the minimum Note Fifths value. In the case of ties, it will output the first group.
     func minNoteFifthsNotes(_ noteCollections: [[Note]]) -> [Note] {
         guard noteCollections.count > 1 else { return noteCollections.isEmpty ? [] : noteCollections[0] }
+//        guard let first = noteCollections.first, first.count > 1 else {
+//            if let first = noteCollections.first {
+//                
+//            } else {
+//                return []
+//            }
+//            return []
+//        }
+        // TODO: check that count of subarrays > 1
         
         var minFifths = Int.max
         var minFifthsNoteCollection: [Note] = []
@@ -92,7 +81,6 @@ extension BestEnharmonicSpelling {
                     numFifths += indicesInLookup[j] - indicesInLookup[i]
                 }
             }
-            print("noteCollection: \(noteCollection) with indicesInLookup: \(indicesInLookup)\nhas numFifths: \(numFifths)")
             if numFifths < minFifths {
                 minFifths = numFifths
                 minFifthsNoteCollection = noteCollection
@@ -101,7 +89,7 @@ extension BestEnharmonicSpelling {
                 let noteCollectionMeanIdx: Float = Float(indicesInLookup.reduce(0, { $0 + $1 })) / Float(indicesInLookup.count)
                 let indicesInCurrentMin = minFifthsNoteCollection.map { NoteFifthsContainer.noteFifthsLookup[$0] ?? 0 }
                 let currentMinMeanIdx: Float = Float(indicesInCurrentMin.reduce(0, { $0 + $1 })) / Float(indicesInCurrentMin.count)
-                if (noteCollectionMeanIdx - Float(midNoteIdx)) < (currentMinMeanIdx - Float(midNoteIdx)) {
+                if abs(noteCollectionMeanIdx - Float(midNoteIdx)) < abs(currentMinMeanIdx - Float(midNoteIdx)) {
                     minFifths = numFifths
                     minFifthsNoteCollection = noteCollection
                 }

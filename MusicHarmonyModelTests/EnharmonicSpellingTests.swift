@@ -79,7 +79,7 @@ class EnharmonicSpellingTests: XCTestCase {
         print(NoteFifthsContainer.noteFifths)
     }
     
-    func testMinNoteFifths() {
+    func testMinNoteFifthsNotes() {
         let noteCombos1 = enharmonicSpeller.generateAllNoteCombinations(from: [.dSharp])
         let noteCombos2 = enharmonicSpeller.generateAllNoteCombinations(from: [.gSharp, .c, .dSharp])
         let noteCombos3 = enharmonicSpeller.generateAllNoteCombinations(from: [.aSharp, .c, .dSharp, .f, .aSharp])
@@ -89,7 +89,7 @@ class EnharmonicSpellingTests: XCTestCase {
         let minNoteFifths3 = bestEnharmonicSpeller.minNoteFifthsNotes(noteCombos3)
         
         XCTAssert(minNoteFifths0 == [])
-        XCTAssert(minNoteFifths1.count == 1) // FIXME
+        XCTAssertTrue(minNoteFifths1 == [Constants.dSharp] || minNoteFifths1 == [Constants.eFlat])
         XCTAssert(Set(minNoteFifths2) == Set([Constants.aFlat, Constants.cNatural, Constants.eFlat]))
         
     }
